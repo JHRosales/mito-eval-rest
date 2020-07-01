@@ -5,7 +5,7 @@ import com.mitocode.document.Estudiante;
 import reactor.core.publisher.Flux;
 
 public interface IEstudianteService extends ICRUD<Estudiante, String>{
-
+	
+	Flux<Estudiante> findAllOrderByEdadDesc();
 	Flux<Estudiante> listarDemorado();
-	Flux<Estudiante> listarSobreCargado();
 }

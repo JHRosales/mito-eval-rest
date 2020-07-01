@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mitocode.document.Estudiante;
 import com.mitocode.service.IEstudianteService;
 
+import net.bytebuddy.asm.Advice.OffsetMapping.Sort;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -40,11 +41,13 @@ public class EstudianteController {
 		
 	@GetMapping
 	public Mono<ResponseEntity<Flux<Estudiante>>> listar(){
-		Flux<Estudiante> fxPlatos = service.listar();
-		
+		Flux<Estudiante> fxEstudiantes = service.listar();
+
 		return Mono.just(ResponseEntity.ok()
 					.contentType(MediaType.APPLICATION_JSON)
-					.body(fxPlatos));
+					.body(fxEstudiantes));
+		
+		
 	}
 	
 	@GetMapping("/{id}")
@@ -54,6 +57,14 @@ public class EstudianteController {
 						.contentType(MediaType.APPLICATION_JSON)
 						.body(p)
 				).defaultIfEmpty(ResponseEntity.notFound().build());
+	}
+	
+	@GetMapping("/orderByEdad")
+	public Mono<ResponseEntity<Flux<Estudiante>>> findAllOrderByEdad() {
+		Flux<Estudiante> fxestudiantes = service.findAllOrderByEdadDesc();
+		return Mono.just(ResponseEntity.ok()
+					.contentType(MediaType.APPLICATION_JSON)
+					.body(fxestudiantes));
 	}
 	
 	@PostMapping
