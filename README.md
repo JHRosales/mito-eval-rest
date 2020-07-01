@@ -5,17 +5,20 @@
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.svg/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.svg)
 
 # Academia
-> Additional information or tagline
+> Consideraciones técnicas:
+	>Enfoque de Anotaciones y Funcional Endpoints para la creación de los servicios
+	>Control de excepciones globales 
+	>Proteger todos los endpoints con Spring Security + JWT o Usar la misma estructura de las colecciones “usuario” y “roles” hechas en el curso 
+	>Solo con tokens vigentes se podrá consumir servicios.
 
 A brief description of your project, what it is used for and how does life get
 awesome when someone starts to use it.
 
 ## Installing / Getting started
 
-En el pom.xml se comento una dependencia, para que funicione con el framework, en algunos casos es necesario descomentar esa dependencia
+En el `pom.xml` se comentó una dependencia, para que funicione con el framework, en algunos casos es necesario descomentar esa dependencia
 
 ```shell
 	<!-- <dependency>
@@ -124,13 +127,7 @@ links to humans using your project. You can include links like:
 
 - Project homepage: https://your.github.com/awesome-project/
 - Repository: https://github.com/your/awesome-project/
-- Issue tracker: https://github.com/your/awesome-project/issues
-  - In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using issue tracker. We value your effort
-    to improve the security and privacy of this project!
-- Related projects:
-  - Your other project: https://github.com/your/other-project/
-  - Someone else's project: https://github.com/someones/awesome-project/
+- MONGO DB 4.x+: https://www.mongodb.com/try/download/compass
 
 
 ## Licensing
