@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5efb758fb6b948233408370b"},"usuario":"jhimi","clave":"$2a$10$ju20i95JTDkRa7Sua63JWOChSBc0MNFtG/6Sps2ahFFqN.HCCUMW.","estado":true,"roles":[{"$ref":"roles","$id":{"$oid":"5efb7569b6b948233408370a"}}]}

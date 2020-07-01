@@ -1,7 +1,13 @@
 "# mito-eval-rest" 
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
+<p align="center"><img src="https://miro.medium.com/max/705/1*jN41v5TFycg9luCOB8w6cA.png"></p>
 
-# Name of the project
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.svg/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.jfree/org.jfree.svg)
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
+
+# Academia
 > Additional information or tagline
 
 A brief description of your project, what it is used for and how does life get
@@ -128,8 +134,6 @@ links to humans using your project. You can include links like:
 
 ## Licensing
 
-One really important part: Give your project a proper license. Here you should
-state what the license is and how to find the text version of the license.
-Something like:
+This proyect is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT)
 
 "The code in this project is licensed under MIT license."

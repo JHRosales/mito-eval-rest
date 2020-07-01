@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5efba935b6b948233408370e"},"nombre":"Sping Reactivo","siglas":"SR","estado":true}
+{"_id":{"$oid":"5efbac08694f7f33107edabc"},"nombre":"Sping Reactivo v1","siglas":"SR1","estado":true}
+{"_id":{"$oid":"5efbae54694f7f33107edac1"},"nombre":"Sping Reactivo v2","siglas":"SR2","estado":true}
+{"_id":{"$oid":"5efbb41c694f7f33107edad0"},"nombre":"Sping Reactivo v3","siglas":"SR3","estado":true}
+{"_id":{"$oid":"5efbb4a3694f7f33107edad1"},"nombre":"Sping Reactivo v4","siglas":"SR4","estado":false}

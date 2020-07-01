@@ -1,0 +1,18 @@
+package com.mitocode.service;
+
+import org.springframework.data.domain.Pageable;
+
+import com.mitocode.pagination.PageSupport;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+public interface ICRUD<T, V> {
+
+	Mono<T> registrar(T t);
+	Mono<T> modificar(T t);
+	Flux<T> listar();
+	Mono<T>listarPorId(V v);
+	Mono<Void> eliminar(V v);
+	Mono<PageSupport<T>> listarPage(Pageable page);
+}
