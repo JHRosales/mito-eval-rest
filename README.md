@@ -91,26 +91,18 @@ A continuacion se detalla todas las funciones del servicio.
 
 ## Configuration
 
-Here you should write what are all of the configurations a user can enter when
-using the project.
-
+Here 
 #### Argument 1
 Type: `String`  
 Default: `'default value'`
 
-State what an argument does and how you can use it. If needed, you can provide
-an example below.
+State example below.
 
 Example:
 ```bash
 awesome-project "Some other value"  # Prints "You're nailing this readme!"
 ```
 
-#### Argument 2
-Type: `Number|Boolean`  
-Default: 100
-
-Copy-paste as many of these as you need.
 
 ## Contributing
 
