@@ -64,15 +64,10 @@ Se crea las siguientes tablas:
 
 ## Developing
 
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
-
 ```shell
 cd awesome-project/
 packagemanager install
 ```
-
-And s.
 
 ## Features
 
@@ -101,13 +96,10 @@ Here
 Type: `String`  
 Default: `'default value'`
 
-State example below.
-
 Example:
 ```bash
-awesome-project "Some other value"  # Prints "You're nailing this readme!"
+awesome-project "Some other value"  # Prints "readme!"
 ```
-
 
 ## Contributing
 
@@ -115,7 +107,7 @@ When
 
 ## Links
 
-links like:
+links:
 
 - Repository: https://github.com/JHRosales/mito-eval-rest
 - MONGO DB 4.x+: https://www.mongodb.com/try/download/compass
