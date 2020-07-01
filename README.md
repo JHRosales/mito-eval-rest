@@ -1,4 +1,3 @@
-"# mito-eval-rest" 
 <p align="center"><img src="https://miro.medium.com/max/705/1*jN41v5TFycg9luCOB8w6cA.png"></p>
 
 <p align="center">
@@ -7,14 +6,15 @@
 </p>
 
 # Academia
-> Consideraciones técnicas:
-	>Enfoque de Anotaciones y Funcional Endpoints para la creación de los servicios
-	>Control de excepciones globales 
-	>Proteger todos los endpoints con Spring Security + JWT o Usar la misma estructura de las colecciones “usuario” y “roles” hechas en el curso 
-	>Solo con tokens vigentes se podrá consumir servicios.
 
-A brief description of your project, what it is used for and how does life get
-awesome when someone starts to use it.
+Consideraciones técnicas:
+ * MongoDB 4.x+
+ * Enfoque de Anotaciones y Funcional Endpoints para la creación de los servicios.
+ * Control de excepciones globales 
+ * Se protege todos los endpoints con Spring Security + JWT 
+ * Solo con tokens vigentes se podrá consumir servicios.
+
+
 
 ## Installing / Getting started
 
@@ -28,12 +28,39 @@ En el `pom.xml` se comentó una dependencia, para que funicione con el framework
         </dependency>-->
 ```
 
-Here you should say what actually happens when you execute the code above.
-
 ### Initial Configuration
 
-Some projects require initial configuration (e.g. access tokens or keys, `npm i`).
-This is the section where you would document those requirements.
+Se crea los servicios REST para 
+* CRUD Estudiantes 
+ 	* Id: string 
+	* Nombres: string 
+	* Apellidos: string 
+	* DNI: string 
+	* Edad: double 
+* CRUD Cursos 
+	* Id: string 
+	* Nombre: string 
+	* Siglas: string 
+	* Estado: boolean 
+* Registrar Matricula 
+   Comprende un documento dentro de una colección NOSQL que brinde la siguiente información. 
+	* Fecha Mátricula: TimeStamp | LocalDateTime 
+	* Estudiante | Class 
+	* Cursos: [ ref:1, ref2. etc… ] | Array DbRef 
+	* Estado: boolean
+* Listar estudiantes ordenados de forma descendente por edad
+
+En MongoDB:
+Se crea una base de Datos llamada: `academia`.
+En el proyecto se adjunta los archivos JSON de las colecciones "Tablas" de la BD `Academia\*`.
+
+Se crea las siguientes tablas:
+
+	* cursos
+	* estudiantes
+	* matriculas
+	* roles
+	* usuarios
 
 ## Developing
 
@@ -41,92 +68,56 @@ Here's a brief intro about what a developer must do in order to start developing
 the project further:
 
 ```shell
-git clone https://github.com/your/awesome-project.git
 cd awesome-project/
 packagemanager install
 ```
 
-And state what happens step-by-step.
-
-### Building
-
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here:
-
-```shell
-./configure
-make
-make install
-```
-
-Here again you should state what actually happens when the code above gets
-executed.
-
-### Deploying / Publishing
-
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
-
-```shell
-packagemanager deploy awesome-project -s server.com -u username -p password
-```
-
-And again you'd need to tell what the previous code actually does.
+And s.
 
 ## Features
 
-What's all the bells and whistles this project can perform?
-* What's the main functionality
-* You can also do another thing
-* If you get really randy, you can even do this
+A continuacion se detalla todas las funciones del servicio.
+
+#### Curso Controller
+<div class="no-margin"><!-- react-text: 150 --> <!-- /react-text --><span><div class="opblock opblock-get" id="operations-curso-controller-listarUsingGET"><div class="opblock-summary opblock-summary-get"><span class="opblock-summary-method">GET</span><span class="opblock-summary-path" data-path="/cursos"><a class="nostyle" href="#/curso-controller/listarUsingGET"><span>/cursos/</span></a></span><div class="opblock-summary-description">listar</div><!-- react-empty: 159 --></div><noscript></noscript></div></span><span><div class="opblock opblock-post" id="operations-curso-controller-registrarUsingPOST"><div class="opblock-summary opblock-summary-post"><span class="opblock-summary-method">POST</span><span class="opblock-summary-path" data-path="/cursos"><a class="nostyle" href="#/curso-controller/registrarUsingPOST"><span>/cursos/</span></a></span><div class="opblock-summary-description">registrar</div><!-- react-empty: 169 --></div><noscript></noscript></div></span><span><div class="opblock opblock-put" id="operations-curso-controller-modificarUsingPUT"><div class="opblock-summary opblock-summary-put"><span class="opblock-summary-method">PUT</span><span class="opblock-summary-path" data-path="/cursos"><a class="nostyle" href="#/curso-controller/modificarUsingPUT"><span>/cursos/</span></a></span><div class="opblock-summary-description">modificar</div><!-- react-empty: 179 --></div><noscript></noscript></div></span><span><div class="opblock opblock-get" id="operations-curso-controller-listarPorIdUsingGET"><div class="opblock-summary opblock-summary-get"><span class="opblock-summary-method">GET</span><span class="opblock-summary-path" data-path="/cursos/{id}"><a class="nostyle" href="#/curso-controller/listarPorIdUsingGET"><span>/cursos/{id}</span></a></span><div class="opblock-summary-description">listarPorId</div><!-- react-empty: 189 --></div><noscript></noscript></div></span><span><div class="opblock opblock-delete" id="operations-curso-controller-eliminarUsingDELETE"><div class="opblock-summary opblock-summary-delete"><span class="opblock-summary-method">DELETE</span><span class="opblock-summary-path" data-path="/cursos/{id}"><a class="nostyle" href="#/curso-controller/eliminarUsingDELETE"><span>/cursos/{id}</span></a></span><div class="opblock-summary-description">eliminar</div><!-- react-empty: 199 --></div><noscript></noscript></div></span><span><div class="opblock opblock-get" id="operations-curso-controller-listarHateoasPorIdUsingGET"><div class="opblock-summary opblock-summary-get"><span class="opblock-summary-method">GET</span><span class="opblock-summary-path" data-path="/cursos/hateoas/{id}"><a class="nostyle" href="#/curso-controller/listarHateoasPorIdUsingGET"><span>/cursos/hateoas/{id}</span></a></span><div class="opblock-summary-description">listarHateoasPorId</div><!-- react-empty: 209 --></div><noscript></noscript></div></span><!-- react-text: 211 --> <!-- /react-text --></div>
+	
+#### Estudiante Controller
+<div class="no-margin"><!-- react-text: 213 --> <!-- /react-text --><span><div class="opblock opblock-get" id="operations-estudiante-controller-listarUsingGET_1"><div class="opblock-summary opblock-summary-get"><span class="opblock-summary-method">GET</span><span class="opblock-summary-path" data-path="/estudiantes"><a class="nostyle" href="#/estudiante-controller/listarUsingGET_1"><span>/estudiantes/</span></a></span><div class="opblock-summary-description"></div><!-- react-empty: 222 --></div>	
+<noscript></noscript></div></span>
+	<span><div class="opblock opblock-get" id="operations-estudiante-controller-listarUsingGET_1"><div class="opblock-summary opblock-summary-get"><span class="opblock-summary-method">GET</span><span class="opblock-summary-path" data-path="/estudiantes"><a class="nostyle" href="#/estudiante-controller/listarUsingGET_1"><span>/estudiantes/</span></a></span><div class="opblock-summary-description">orderByEdad</div><!-- react-empty: 222 --></div>	
+<noscript></noscript></div></span>	
+	<span><div class="opblock opblock-post" id="operations-estudiante-controller-registrarUsingPOST_1"><div class="opblock-summary opblock-summary-post"><span class="opblock-summary-method">POST</span><span class="opblock-summary-path" data-path="/estudiantes"><a class="nostyle" href="#/estudiante-controller/registrarUsingPOST_1"><span>/estudiantes/</span></a></span><div class="opblock-summary-description">registrar</div><!-- react-empty: 232 --></div><noscript></noscript></div></span><span><div class="opblock opblock-put" id="operations-estudiante-controller-modificarUsingPUT_1"><div class="opblock-summary opblock-summary-put"><span class="opblock-summary-method">PUT</span><span class="opblock-summary-path" data-path="/estudiantes"><a class="nostyle" href="#/estudiante-controller/modificarUsingPUT_1"><span>/estudiantes/</span></a></span><div class="opblock-summary-description">modificar</div><!-- react-empty: 242 --></div><noscript></noscript></div></span><span><div class="opblock opblock-get" id="operations-estudiante-controller-listarPorIdUsingGET_1"><div class="opblock-summary opblock-summary-get"><span class="opblock-summary-method">GET</span><span class="opblock-summary-path" data-path="/estudiantes/{id}"><a class="nostyle" href="#/estudiante-controller/listarPorIdUsingGET_1"><span>/estudiantes/{id}</span></a></span><div class="opblock-summary-description">listarPorId</div><!-- react-empty: 252 --></div><noscript></noscript></div></span><span><div class="opblock opblock-delete" id="operations-estudiante-controller-eliminarUsingDELETE_1"><div class="opblock-summary opblock-summary-delete"><span class="opblock-summary-method">DELETE</span><span class="opblock-summary-path" data-path="/estudiantes/{id}"><a class="nostyle" href="#/estudiante-controller/eliminarUsingDELETE_1"><span>/estudiantes/{id}</span></a></span><div class="opblock-summary-description">eliminar</div><!-- react-empty: 262 --></div><noscript></noscript></div></span><!-- react-text: 264 --> <!-- /react-text --></div>
+
+#### Login Controller
+<div class="no-margin"><!-- react-text: 266 --> <!-- /react-text --><span><div class="opblock opblock-post" id="operations-login-controller-loginUsingPOST"><div class="opblock-summary opblock-summary-post"><span class="opblock-summary-method">POST</span><span class="opblock-summary-path" data-path="/login"><a class="nostyle" href="#/login-controller/loginUsingPOST"><span>/login</span></a></span><div class="opblock-summary-description">login</div><!-- react-empty: 275 --></div><noscript></noscript></div></span><span><div class="opblock opblock-post" id="operations-login-controller-loginUsingPOST_1"><div class="opblock-summary opblock-summary-post"><span class="opblock-summary-method">POST</span><span class="opblock-summary-path" data-path="/v2/login"><a class="nostyle" href="#/login-controller/loginUsingPOST_1"><span>/v2/login</span></a></span><div class="opblock-summary-description">login</div><!-- react-empty: 285 --></div><noscript></noscript></div></span><!-- react-text: 287 --> <!-- /react-text --></div>
+
+#### Matricula Controller
+<div class="no-margin"><!-- react-text: 289 --> <!-- /react-text --><span><div class="opblock opblock-get" id="operations-matricula-controller-listarUsingGET_2"><div class="opblock-summary opblock-summary-get"><span class="opblock-summary-method">GET</span><span class="opblock-summary-path" data-path="/matriculas"><a class="nostyle" href="#/matricula-controller/listarUsingGET_2"><span>/matriculas/</span></a></span><div class="opblock-summary-description">listar</div><!-- react-empty: 298 --></div><noscript></noscript></div></span><span><div class="opblock opblock-post" id="operations-matricula-controller-registrarUsingPOST_2"><div class="opblock-summary opblock-summary-post"><span class="opblock-summary-method">POST</span><span class="opblock-summary-path" data-path="/matriculas"><a class="nostyle" href="#/matricula-controller/registrarUsingPOST_2"><span>/matriculas</span></a></span><div class="opblock-summary-description">registrar</div><!-- react-empty: 308 --></div><noscript></noscript></div></span><span><div class="opblock opblock-put" id="operations-matricula-controller-modificarUsingPUT_2"><div class="opblock-summary opblock-summary-put"><span class="opblock-summary-method">PUT</span><span class="opblock-summary-path" data-path="/matriculas"><a class="nostyle" href="#/matricula-controller/modificarUsingPUT_2"><span>/matriculas</span></a></span><div class="opblock-summary-description">modificar</div><!-- react-empty: 318 --></div><noscript></noscript></div></span><span><div class="opblock opblock-get" id="operations-matricula-controller-listarPorIdUsingGET_2"><div class="opblock-summary opblock-summary-get"><span class="opblock-summary-method">GET</span><span class="opblock-summary-path" data-path="/matriculas/{id}"><a class="nostyle" href="#/matricula-controller/listarPorIdUsingGET_2"><span>/matriculas/{id}</span></a></span><div class="opblock-summary-description">listarPorId</div><!-- react-empty: 328 --></div><noscript></noscript></div></span><span><div class="opblock opblock-delete" id="operations-matricula-controller-eliminarUsingDELETE_2"><div class="opblock-summary opblock-summary-delete"><span class="opblock-summary-method">DELETE</span><span class="opblock-summary-path" data-path="/matriculas/{id}"><a class="nostyle" href="#/matricula-controller/eliminarUsingDELETE_2"><span>/matriculas/{id}</span></a></span><div class="opblock-summary-description">eliminar</div><!-- react-empty: 338 --></div><noscript></noscript></div></span><!-- react-text: 340 --> <!-- /react-text --></div>
 
 ## Configuration
 
-Here you should write what are all of the configurations a user can enter when
-using the project.
-
+Here 
 #### Argument 1
 Type: `String`  
 Default: `'default value'`
 
-State what an argument does and how you can use it. If needed, you can provide
-an example below.
+State example below.
 
 Example:
 ```bash
 awesome-project "Some other value"  # Prints "You're nailing this readme!"
 ```
 
-#### Argument 2
-Type: `Number|Boolean`  
-Default: 100
-
-Copy-paste as many of these as you need.
 
 ## Contributing
 
-When you publish something open source, one of the greatest motivations is that
-anyone can just jump in and start contributing to your project.
-
-These paragraphs are meant to welcome those kind souls to feel that they are
-needed. You should state something like:
-
-"If you'd like to contribute, please fork the repository and use a feature
-branch. Pull requests are warmly welcome."
-
-If there's anything else the developer needs to know (e.g. the code style
-guide), you should link it here. If there's a lot of things to take into
-consideration, it is common to separate this section to its own file called
-`CONTRIBUTING.md` (or similar). If so, you should say that it exists here.
+When 
 
 ## Links
 
-Even though this information can be found inside the project on machine-readable
-format like in a .json file, it's good to include a summary of most useful
-links to humans using your project. You can include links like:
+links like:
 
-- Project homepage: https://your.github.com/awesome-project/
-- Repository: https://github.com/your/awesome-project/
+- Repository: https://github.com/JHRosales/mito-eval-rest
 - MONGO DB 4.x+: https://www.mongodb.com/try/download/compass
 
 
@@ -134,4 +125,4 @@ links to humans using your project. You can include links like:
 
 This proyect is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT)
 
-"The code in this project is licensed under MIT license."
+"Jhimi Rosales"
